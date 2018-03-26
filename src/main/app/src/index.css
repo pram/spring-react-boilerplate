@@ -1,0 +1,21 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  padding-top: 45px;
+}
+
+.navbar {
+  margin-bottom: 20px;
+  border-bottom-width: 1px;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
