@@ -6,7 +6,7 @@ import { Container } from 'reactstrap';
 
 import Home from '../home';
 import About from '../about';
-import SignIn from '../../components/SignIn'
+import SignIn from '../signin'
 import AppNav from '../appnav';
 
 const App = () => (

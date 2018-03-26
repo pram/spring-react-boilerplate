@@ -5,9 +5,9 @@ import { withRouter } from 'react-router-dom';
 
 import { Button, Container, Form, FormGroup, Label, ListGroup, ListGroupItem, Input, Alert } from 'reactstrap';
 
-import { authenticated, login, logout } from '../data/modules/auth';
-import type { AuthState, Role } from '../data/modules/auth';
-import { socketsConnect } from '../middleware/socketActions';
+import { authenticated, login, logout } from '../../data/modules/auth';
+import type { AuthState, Role } from '../../data/modules/auth';
+import { socketsConnect } from '../../middleware/socketActions';
 
 type Props = {
     authState: AuthState,
