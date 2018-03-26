@@ -24,7 +24,7 @@ public class WebSocketController {
 	@Scheduled(fixedRate = 5000)
     public void sendUpdate() {
 		String formattedDate = DateFormat.getTimeInstance().format(new Date());
-		log.info("Sending Update {}", formattedDate);
+		log.debug("Sending Update {}", formattedDate);
 		this.template.convertAndSend("/topic/update", formattedDate);
 	}
 

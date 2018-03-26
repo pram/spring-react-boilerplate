@@ -18,7 +18,7 @@ public class MethodProtectedRestController {
     @RequestMapping(method = RequestMethod.GET)
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> getProtectedGreeting() {
-        return ResponseEntity.ok("Greetings from admin protected method!");
+        return ResponseEntity.ok("Admin only method says hello");
     }
 
 }
