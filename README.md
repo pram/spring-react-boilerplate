@@ -36,4 +36,6 @@ The self contained jar will be created in `${project.basedir}/target`
 To run the app
 
     java -jar target/spring-react-boilerplate-0.0.1-SNAPSHOT.jar
+    
+You can now access the app on [port 8080](http://localhost:8080)    
 
