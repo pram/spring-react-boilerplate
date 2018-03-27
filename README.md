@@ -25,7 +25,7 @@ To build and run locally
     
 You can now access the app on [port 8080](http://localhost:8080)
 
-# Build deployable package
+## Build deployable package
 
 To build a deployable artifact
 
@@ -38,4 +38,9 @@ To run the app
     java -jar target/spring-react-boilerplate-0.0.1-SNAPSHOT.jar
     
 You can now access the app on [port 8080](http://localhost:8080)    
+
+## User details
+
+    admin/admin
+    user/password
 
