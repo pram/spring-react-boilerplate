@@ -1,6 +1,6 @@
 # spring-react-boilerplate
 
-[![CircleCI](https://circleci.com/gh/pram/spring-react-boilerplate.svg?style=svg)](https://circleci.com/gh/pram/spring-react-boilerplate)
+[![CircleCI](https://circleci.com/gh/pram/spring-react-boilerplate.svg?style=svg)](https://circleci.com/gh/pram/spring-react-boilerplate) [![Coverage Status](https://coveralls.io/repos/github/pram/spring-react-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/pram/spring-react-boilerplate?branch=master)
 
 Boilerplate application to demonstrate how to wire up Spring, JWT Authentication, React, Redux and Websockets.
 
