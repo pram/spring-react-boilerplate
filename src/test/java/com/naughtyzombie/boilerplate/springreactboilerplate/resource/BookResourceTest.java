@@ -1,5 +1,7 @@
 package com.naughtyzombie.boilerplate.springreactboilerplate.resource;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.naughtyzombie.boilerplate.springreactboilerplate.model.Book;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,6 +18,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -26,6 +29,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
         @Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD, scripts = "classpath:clean.sql")
 })
 public class BookResourceTest {
+
+    @Autowired
+    private ObjectMapper mapper;
 
     @Autowired
     private WebApplicationContext wac;
@@ -45,6 +51,30 @@ public class BookResourceTest {
                 .andReturn();
 
         String expected = "[{'id':1,'name':'Spring Boot React Example','price':0.0}]";
+
+        JSONAssert.assertEquals(expected,result.getResponse().getContentAsString(), false);
+    }
+
+    @Test
+    public void addNewBooksRestTest() throws Exception {
+
+        Book book = new Book();
+        book.setId(2L);
+        book.setName("New Test Book");
+        book.setPrice(1.75);
+
+        String json = mapper.writeValueAsString(book);
+
+        MvcResult result = mockMvc.perform(post("/api/addbook")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(json)
+                    .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andReturn();
+
+        String expected = "[{'id':1,'name':'Spring Boot React Example','price':0.0}," +
+                "{'id':2,'name':'New Test Book','price':1.75}]";
 
         JSONAssert.assertEquals(expected,result.getResponse().getContentAsString(), false);
     }
