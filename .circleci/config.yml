@@ -38,5 +38,5 @@ jobs:
           key: v1-dependencies-{{ checksum "pom.xml" }}
 
       # run tests!
-      - run: mvn test coveralls:report -Dskip.yarn
+      - run: mvn test jacoco:report coveralls:report -Dskip.yarn
 
