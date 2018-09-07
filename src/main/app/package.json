@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "flow-bin": "^0.68.0",
+    "flow-bin": "^0.80.0",
     "react-scripts": "^1.0.17"
   },
   "dependencies": {
@@ -17,10 +17,10 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "next",
-    "reactstrap": "^5.0.0-beta.3",
-    "redux": "^3.7.2",
+    "reactstrap": "^6.4.0",
+    "redux": "^4.0.0",
     "redux-thunk": "^2.2.0",
-    "sanitize.css": "^5.0.0",
+    "sanitize.css": "^7.0.3",
     "sockjs-client": "^1.1.4"
   },
   "scripts": {
